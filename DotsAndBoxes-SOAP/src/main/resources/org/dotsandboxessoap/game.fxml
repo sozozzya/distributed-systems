@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.dotsandboxessoap.ui.GameController">
+
+    <top>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Хост:"/>
+            <TextField fx:id="tfServerHost" prefWidth="120"/>
+            <Label text="Порт:"/>
+            <TextField fx:id="tfServerPort" prefWidth="60"/>
+            <Button fx:id="btnConnect" text="Старт" onAction="#onConnectClicked"/>
+            <Label text="Мой цвет:"/>
+            <Label fx:id="lblMyColor" text="-   "/>
+            <Button fx:id="btnRestart" text="Заново" onAction="#onRestartClicked"/>
+            <Region HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="70"/>
+            </padding>
+
+            <GridPane fx:id="boardPane" gridLinesVisible="false"/>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="20" alignment="CENTER_LEFT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="Ходит:"/>
+            <Label fx:id="lblTurn" text="-"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Закрашено красным:"/>
+            <Label fx:id="lblScoreRed" text="0"/>
+            <Label text="Закрашено синим:"/>
+            <Label fx:id="lblScoreBlue" text="0"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
